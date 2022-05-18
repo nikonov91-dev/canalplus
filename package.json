@@ -2,6 +2,7 @@
     "name": "canal_plus",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://nikonov91-dev.github.io/canalplus/",
     "dependencies": {
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
@@ -52,6 +53,7 @@
         ]
     },
     "devDependencies": {
+        "gh-pages": "^4.0.0",
         "json-server": "^0.17.0"
     }
 }
