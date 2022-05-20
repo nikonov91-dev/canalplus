@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { CommonState, error, isFetching } from './common';
+import { CommonState, error, isFetching,  } from './common';
 import { MovieData } from '../common/types';
+import { toggleSnackbar } from './snackReducer';
 
 const apiKey = '92b418e837b833be308bbfb1fb2aca1e';
 
@@ -26,11 +27,16 @@ type ResponseData = {
 
 export const fetchList = createAsyncThunk(
   'list/get',
-  async () => {
+  async (_, {dispatch}) => {
     try {
       const response = await axios.get<ResponseData>(url);
       return response.data
-    } catch (error) {
+    } catch (error) {    
+      if (axios.isAxiosError(error) && error.response?.status === 0) {
+        dispatch(toggleSnackbar(true))
+        const responseDataOnError: ResponseData = {results: []}
+        return responseDataOnError
+      } else
       throw error;
     }
   }

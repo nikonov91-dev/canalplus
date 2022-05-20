@@ -1,7 +1,6 @@
 import { PayloadAction, SerializedError } from '@reduxjs/toolkit';
 
 
-
 export type CommonState = {
     isFetching: boolean;
     error: SerializedError | null;

@@ -10,23 +10,23 @@ import {
 
 const no_movie_poster = 'https://www.prokerala.com/movies/assets/img/no-poster-available.jpg';
 
-export default function MovieList () {
+export default function MovieList() {
   const dispatch = useAppDispatch();
   const { list, isFetching: isListFetching } = useAppSelector(({ apiReducer }) => apiReducer);
   useEffect(() => {
     dispatch(fetchList())
   }, [dispatch]);
-  const formatDate = (d:string):string => moment(d, 'YYYY-MM-DD').format('YYYY');
+  const formatDate = (d: string): string => moment(d, 'YYYY-MM-DD').format('YYYY');
   return (
-    <Grid container justifyContent="center" sx={{mt: '10px' }}>
+    <Grid container justifyContent="center" sx={{ mt: '10px' }}>
       <List sx={{ width: '100%', maxWidth: '800px', bgcolor: 'background.paper' }}>
         {
-          list.map((e: MovieData, i: number) =>
+          list.length ? list.map((e: MovieData, i: number) =>
             <ListItem>
               <Card sx={{ display: 'flex', flexDirection: 'row' }}>
                 <CardMedia
                   component="img"
-                  sx={{ width: "200px"}}
+                  sx={{ width: "200px" }}
                   image={e.poster_path || no_movie_poster}
                   alt={e.title}
                 />
@@ -46,7 +46,15 @@ export default function MovieList () {
               </Card>
 
             </ListItem>
-          )}
+          )
+            : <ListItem sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Card>
+                <CardContent>
+                  <Typography variant="body2" color="text.secondary" children={`The list of Moview is empty`} />
+                </CardContent>
+              </Card>
+
+            </ListItem>}
       </List>
     </Grid>
   )

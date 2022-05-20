@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import apiReducer from '../slices/apiReducer';
+import snackReducer from '../slices/snackReducer';
 
 export const store = configureStore({
   reducer: {
-    apiReducer
+    apiReducer,
+    snackReducer
   },
 });
 
