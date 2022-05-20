@@ -50,7 +50,7 @@ export default function MovieList() {
             : <ListItem sx={{ display: 'flex', justifyContent: 'center' }}>
               <Card>
                 <CardContent>
-                  <Typography variant="body2" color="text.secondary" children={`The list of Moview is empty`} />
+                  <Typography variant="body2" color="text.secondary" children={`The list of Movies is empty`} />
                 </CardContent>
               </Card>
 

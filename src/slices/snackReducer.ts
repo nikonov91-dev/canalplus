@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState:{value:boolean} = {value: true};
+const initialState:{value:boolean} = {value: false};
 
 export const slice = createSlice({
   name: 'snackReducer',
