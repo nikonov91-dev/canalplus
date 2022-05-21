@@ -4,7 +4,7 @@ import { CommonState, error, isFetching,  } from './common';
 import { MovieData } from '../common/types';
 import { toggleSnackbar } from './snackReducer';
 
-const apiKey = '92b418e837b833be308bbfb1fb2aca1e';
+const apiKey = process.env.REACT_APP_MOVIE_DB_APIKey;
 
 const url = `http://localhost:4000/latest_movies?api_key=${apiKey}`;
 
@@ -29,6 +29,7 @@ export const fetchList = createAsyncThunk(
   'list/get',
   async (_, {dispatch}) => {
     try {
+      debugger
       const response = await axios.get<ResponseData>(url);
       return response.data
     } catch (error) {    
