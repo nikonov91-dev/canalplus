@@ -31,7 +31,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm jserver`
 
-To let application make network requests you should start Json-Server to let get movie list. Json-server runs at localhost:4000 and serves the db file at */json-server/db.json
+To let application make network requests you should start Json-Server to let get movie list. Json-server runs at localhost:4000 and serves the db file at \*/json-server/db.json
 
 ## Learn More
 

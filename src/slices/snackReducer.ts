@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState:{value:boolean} = {value: false};
+const initialState: { value: boolean } = { value: false };
 
 export const slice = createSlice({
   name: 'snackReducer',
@@ -8,10 +8,10 @@ export const slice = createSlice({
   reducers: {
     toggleSnackbar: (state, action) => {
       state.value = action.payload;
-      debugger
+      debugger;
     },
-  }
-})
+  },
+});
 
 export const { toggleSnackbar } = slice.actions;
 

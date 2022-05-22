@@ -7,10 +7,9 @@ import PositionedSnackbar from './Components/Snackbar';
 export default function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <PositionedSnackbar/>
-      <List/>
+      <NavBar />
+      <PositionedSnackbar />
+      <List />
     </div>
   );
 }
-

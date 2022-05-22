@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import {AppBar, Box, Toolbar, InputBase} from '@mui/material';
+import { AppBar, Box, Toolbar, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
@@ -48,22 +48,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ bgcolor: '#2e2e44'}}>
-        <Toolbar sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>          
+      <AppBar position="static" sx={{ bgcolor: '#2e2e44' }}>
+        <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
           <Box
-                  component="img"
-                  sx={{ height: "40%"}}
-                  src={'https://thumb.canalplus.pro/http/unsafe/148x34/filters:quality(80)/static.canal-plus.net/resources/mycanal/mycanal-logo.svg'}
-                  alt={'e.title'}
-                />
+            component="img"
+            sx={{ height: '40%' }}
+            src={
+              'https://thumb.canalplus.pro/http/unsafe/148x34/filters:quality(80)/static.canal-plus.net/resources/mycanal/mycanal-logo.svg'
+            }
+            alt={'e.title'}
+          />
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Find movie"
-              inputProps={{ 'aria-label': 'search' }}
-            />
+            <StyledInputBase placeholder="Find movie" inputProps={{ 'aria-label': 'search' }} />
           </Search>
         </Toolbar>
       </AppBar>

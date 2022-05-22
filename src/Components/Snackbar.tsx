@@ -19,5 +19,5 @@ export default function PositionedSnackbar() {
         </Alert>
       </Snackbar>
     </div>
-  )
+  );
 }
